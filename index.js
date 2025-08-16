@@ -5,7 +5,7 @@ const { v4: uuid } = require("uuid");
 const admin = require("firebase-admin");
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -96,5 +96,5 @@ app.post("/delete/:type/:id", async (req, res) => {
 
 // ================= START SERVER ==================
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on port${PORT}`);
 });
