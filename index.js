@@ -15,12 +15,20 @@ app.set("views", path.join(__dirname, "views"));
 
 //  FIREBASE SETUP
 
-const serviceAccount = JSON.parse(process.env.SERVICE_ACCOUNT);
+let serviceAccount;
 
+if (process.env.SERVICE_ACCOUNT) {
+  // Render ya server pe
+  serviceAccount = JSON.parse(process.env.SERVICE_ACCOUNT);
+} else {
+  // Local testing ke liye file use karo
+  serviceAccount = require("./serviceAccountKey.json");
+}
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
+
 
 const db = admin.firestore();
 
@@ -100,4 +108,5 @@ app.post("/delete/:type/:id", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port${PORT}`);
 });
+
 
