@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add <%= type %></title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="form-section">
+    <h2>Add to <%= type %></h2>
+    <form method="POST" action="/add/<%= type %>">
+      <textarea name="content" placeholder="Enter your message..." required></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <br />
+    <a href="/">⬅️ Back to Home</a>
+  </main>
+</body>
+</html>

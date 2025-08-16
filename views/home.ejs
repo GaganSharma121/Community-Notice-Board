@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Notice Board</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+  <div class="logo-container">
+    <img src="/logo.jpg" alt="Community Logo" class="full-logo" />
+  </div>
+  <div class="header-right">
+    <h1>Community Notice Board</h1>
+    <nav>
+      <a href="/add/announcements">📢 Announcements</a>
+      <a href="/add/events">🎉 Events</a>
+      <a href="/add/market">🛒 Market</a>
+      <a href="/add/contacts">📞 Contacts</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; 
+            padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 16px;">
+  <strong>⚠️ Warning:</strong>  
+  This website has been created to help the community. Please do not share any wrong or misleading information here.  
+  Do not delete announcements, events, or posts shared by others without a valid reason.  
+  If any incorrect data is found, the admin reserves the right to remove it.
+</div>
+
+
+    <% for (let key in data) { %>
+      <section>
+        <h2><%= key.charAt(0).toUpperCase() + key.slice(1) %></h2>
+        <% if (data[key].length === 0) { %>
+          <p>No entries yet.</p>
+        <% } else { %>
+          <ul>
+            <% data[key].forEach(item => { %>
+              <li>
+                <%= item.content %>
+                <form method="POST" action="/delete/<%= key %>/<%= item.id %>" style="display:inline;">
+                  <button type="submit">🗑️ Delete</button>
+                </form>
+              </li>
+            <% }) %>
+          </ul>
+        <% } %>
+      </section>
+    <% } %>
+
+
+  </main>
+
+  <footer>
+    <p>Maintained by Gagan Sharma.</p>
+  </footer>
+</body>
+</html>

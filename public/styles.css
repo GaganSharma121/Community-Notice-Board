@@ -1,0 +1,185 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+header {
+  background: #2e8b8b;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  height: 120px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 25px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  background: white;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-left: 10px;
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: darkred;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.form-section {
+  padding: 20px;
+  background: white;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+
+/*  */
+
+/* LOGO SECTION */
+.logo-container {
+  height: 100%;
+  width: auto;
+}
+
+.full-logo {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* RIGHT SIDE (title + nav) */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding-left: 5px; */
+  flex: 1;
+}
+
+.header-right h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+nav {
+  margin-top: 5px;
+}
+
+nav a {
+  margin-right: 15px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* for responsive  */
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 10px; */
+  }
+
+  .full-logo {
+    height: 120px; /* logo thoda chhota mobile ke liye */
+    max-width: 90%;
+    object-fit: contain;
+  }
+
+  .header-right {
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .header-right h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 0;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    width: 100%;
+    text-align: center;
+  }
+}

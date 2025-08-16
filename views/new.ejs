@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Post</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Add a New Notice</h1>
+  <form method="POST" action="/posts">
+    <input type="text" name="title" placeholder="Title" required /><br>
+    <textarea name="content" placeholder="Enter notice details" rows="5" required></textarea><br>
+    <select name="category">
+      <option>Announcement</option>
+      <option>Event</option>
+      <option>Buy/Sell</option>
+      <option>Important Contact</option>
+    </select><br><br>
+    <button type="submit">Post</button>
+  </form>
+  <a href="/">⬅ Back</a>
+</body>
+</html>
