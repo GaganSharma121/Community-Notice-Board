@@ -13,8 +13,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// ================= FIREBASE SETUP ==================
-const serviceAccount = require("./serviceAccountKey.json");
+//  FIREBASE SETUP
+
+const serviceAccount = JSON.parse(process.env.SERVICE_ACCOUNT);
+
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -22,7 +24,7 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-// ================= ROUTES ==================
+// ROUTES
 
 // Example Firebase test route
 app.get("/add", async (req, res) => {
@@ -94,7 +96,8 @@ app.post("/delete/:type/:id", async (req, res) => {
   }
 });
 
-// ================= START SERVER ==================
+// START SERVER 
 app.listen(PORT, () => {
   console.log(`Server running on port${PORT}`);
 });
+
